@@ -59,22 +59,30 @@ class Attend extends Db
     }
 }
 
+$msg = '';
+$inputtedMemberUserId = '';
 if (!empty($_POST['member_user_id'])) {
-    try {
-        $attend = new Attend($_POST['member_user_id']);
+    // xss対策
+    $inputtedMemberUserId = h($_POST['member_user_id']);
 
+    // 登録作業
+    try {
+        $attend = new Attend($inputtedMemberUserId);
+
+        // マスタに登録があるIDかどうか調査
         $member = $attend->checkMemberExist();
-        var_dump($member);
         if (empty($member['member_exist'])) {
             $msg = 'ユーザーが見つかりません';
-            throw new Exception('マスタに登録が見つかりません。ユーザーID:'. $_POST['member_user_id']);
+            throw new Exception('マスタに登録が見つかりません。ユーザーID:'. $inputtedMemberUserId);
         }
 
+        // 既に登録済かどうか調査
         if ((int)$attend->checkAttendance() > 0) {
             $msg = '出席登録済です';
-            throw new Exception('出席登録済。ユーザーID:'. $_POST['member_user_id']);
+            throw new Exception('出席登録済。ユーザーID:'. $inputtedMemberUserId);
         }
 
+        // 出席登録
         $attend->resisterAttendance();
         $msg = $member['member_name']. 'さん、出席を登録しました。';
 
