@@ -1,5 +1,7 @@
 # お勉強同好会のぺーじ
 
+自身の環境で動かす場合は下記の設定を行って下さい
+
 ## DB接続設定(必須)
 
 ```text
@@ -7,6 +9,9 @@ phpフォルダ直下に
 DbPass.php
 ファイルを作成
 ```
+
+↑DB自体はなんとかして自力で準備してください←  
+XAMPPとかMAMPインストールすればなんとかなるはずです！！
 
 ### Db.Pass.php 中身
 
@@ -19,7 +24,7 @@ define('DBUSER', '');  // ユーザー名(XAMPPやMAMPの場合はrootとかの�
 define('DBPASS', '');  // パスワード(XAMPPなら空、MAMPはpasswordがデフォルト？そうじゃない場合は各自で調査してください←)
 ```
 
-↑HOST, DBNAME, DBUSER, DBPASS は各自の環境に合わせて設定してください
+↑HOST, DBNAME, DBUSER, DBPASS は各自の環境に合わせて設定
 
 ## Tailwind CSS 環境設定(必須ではない)
 
