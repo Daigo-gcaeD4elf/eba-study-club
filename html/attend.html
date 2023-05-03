@@ -13,9 +13,13 @@
     <div>
         <form action="" method="POST">
             <h3>ユーザーID ※EBAメールアドレスの@マークより前の部分(@は不要)</h3>
-            <input type="text" name="member_user_id" value="<?=$inputtedMemberUserId?>" placeholder="s.ebata" class="border">
-            <input type="submit" name="attend" value="出席" class="bg-gray-200 border">
+            <input id="js_mail_account" type="text" name="mail_account" value="" placeholder="s.ebata" class="border">
+            <select id="js_domain" name="domain">
+                <option value="ebacorp.jp">@ebacorp.jp</option>
+            </select>
+            <input id="js_attend_button" type="button" name="attend" value="出席" class="bg-gray-200 border">
         </form>
     </div>
+    <script src="../js/attend.js?ver=0.0.0"></script>
 </body>
 </html>

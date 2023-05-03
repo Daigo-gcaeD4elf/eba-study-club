@@ -1,7 +1,9 @@
 /* 部員_権限を持つ方のみ */
+DROP TABLE IF EXISTS master_admin_member;
+
 CREATE TABLE master_admin_member (
-    admin_member_id            SMALLINT NOT NULL      /* ID (master_memberのmember_idと紐づけ) */
-    ,member_user_id            VARCHAR(20) UNIQUE     /* メンバーのユーザーID(EBAメールアドレスの@より前) */
-    ,member_user_pass          TEXT                   /* メンバーのユーザーID(EBAメールアドレスの@より前) */
-    ,PRIMARY KEY(admin_member_id)
+    emproyee_no       SMALLINT UNSIGNED NOT NULL /* 社員番号 */
+    ,mail_account     VARCHAR(20) UNIQUE         /* EBAメールアドレスの@より前 */
+    ,member_user_pass TEXT                       /* メンバーのパスワード */
+    ,PRIMARY KEY(emproyee_no)
 );

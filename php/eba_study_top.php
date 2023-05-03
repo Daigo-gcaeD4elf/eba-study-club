@@ -59,8 +59,6 @@ try {
     echo $e->getMessage();
 }
 
-
-
 // todoEba投稿者
 
 
