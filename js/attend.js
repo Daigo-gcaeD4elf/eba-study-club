@@ -11,8 +11,6 @@ let attendMsgTag       = document.getElementById('js_attend_message');
 // ローカルストレージが残っていれば、自動でメールアカウントを入力
 let ebaEmproyeeNoByLocalStorage = localStorage.getItem('ebaEmproyeeNo');
 
-console.log('ebaEmproyeeNoByLocalStorage : ' + ebaEmproyeeNoByLocalStorage);
-
 if (ebaEmproyeeNoByLocalStorage) {
 
     let fetchUserInfoParams = {
@@ -56,10 +54,7 @@ attendBtn.addEventListener('click', () => {
 
         // ローカルストレージに保存
         if (res.returnCode === '0' && res.emproyeeNo !== Number(ebaEmproyeeNoByLocalStorage)) {
-            console.log('ローカルストレージ保存するやで');
             localStorage.setItem('ebaEmproyeeNo', res.emproyeeNo);
-        } else {
-            console.log('ローカルストレージ保存できぬ');
         }
     });
 })
