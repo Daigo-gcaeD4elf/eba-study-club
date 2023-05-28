@@ -142,9 +142,9 @@ class Yattemiyou extends Db
     private function __resisterAttendance($mailAccount, $domain)
     {
         $sql = 'INSERT INTO attendance';
-        $sql .= ' (mail_account, domain, member_name, member_name_kana, guest_flg, event_date)';
+        $sql .= ' (mail_account, domain, member_name, member_name_kana, guest_flg, emproyee_no, event_date)';
         $sql .= ' SELECT';
-        $sql .= ' mail_account, domain, member_name, member_name_kana, guest_flg, DATE_FORMAT(NOW(), \'%Y%m%d\')';
+        $sql .= ' mail_account, domain, member_name, member_name_kana, guest_flg, emproyee_no, DATE_FORMAT(NOW(), \'%Y%m%d\')';
         $sql .= ' FROM master_member';
         $sql .= ' WHERE mail_account = :mail_account AND domain = :domain';
 

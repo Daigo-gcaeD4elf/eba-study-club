@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/dist.css?">
+    <link rel="stylesheet" href="../css/dist.css?ver=0.0.1">
     <title>お勉強同好会 出席登録</title>
 </head>
 <body>
     <h1 class="text-2xl">お勉強同好会 出席登録</h1>
-    <h2><?=$msg;?></h2>
+    <h2 id="js_attend_message" class="text-red-500 font-bold"></h2>
     <div>
         <form action="" method="POST">
             <h3>ユーザーID ※EBAメールアドレスの@マークより前の部分(@は不要)</h3>
@@ -20,6 +20,6 @@
             <input id="js_attend_button" type="button" name="attend" value="出席" class="bg-gray-200 border">
         </form>
     </div>
-    <script src="../js/attend.js?ver=0.0.0"></script>
+    <script src="../js/attend.js?ver=0.0.1"></script>
 </body>
 </html>
